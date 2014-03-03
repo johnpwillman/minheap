@@ -6,43 +6,43 @@ public class Driver {
 		Heap mh = new Heap();
 		
 		/*
-		mh.insert("The");
-		mh.insert("Quick");
-		mh.insert("Brown");
-		mh.insert("Fox");
-		mh.insert("Jumped");
-		mh.insert("Over");
-		mh.insert("The");
-		mh.insert("Lazy");
-		mh.insert("Dog");
+		mh.add("The");
+		mh.add("Quick");
+		mh.add("Brown");
+		mh.add("Fox");
+		mh.add("Jumped");
+		mh.add("Over");
+		mh.add("The");
+		mh.add("Lazy");
+		mh.add("Dog");
 		*/
 		
 		/*
-		mh.insert("45");
-		mh.insert("65");
-		mh.insert("72");
-		mh.insert("90");
-		mh.insert("82");
-		mh.insert("81");
-		mh.insert("99");
-		mh.insert("96");
-		//mh.insert("95");
-		mh.insert("50");
+		mh.add("45");
+		mh.add("65");
+		mh.add("72");
+		mh.add("90");
+		mh.add("82");
+		mh.add("81");
+		mh.add("99");
+		mh.add("96");
+		//mh.add("95");
+		mh.add("50");
 		*/
 
-		mh.insert("run");
-		mh.insert("runner");
-		mh.insert("running");
-		mh.insert("runnings");
-		mh.insert("swimming");
-		mh.insert("swimmer");
+		mh.add("run");
+		mh.add("runner");
+		mh.add("running");
+		mh.add("runnings");
+		mh.add("swimming");
+		mh.add("swimmer");
 		
 		/*
-		mh.insert("lorem");
-		mh.insert("ipsum");
-		mh.insert("dolor");
-		mh.insert("sit");
-		mh.insert("amet");
+		mh.add("lorem");
+		mh.add("ipsum");
+		mh.add("dolor");
+		mh.add("sit");
+		mh.add("amet");
 		*/
 		//System.out.println("MinHeap in preorder: " + mh.printHeapStringsInPreOrder());
 		

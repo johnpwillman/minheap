@@ -30,7 +30,7 @@ public class Heap extends AbstractCollection<Object>{
 	 * @param heapRootValue	The desired value of the root node.
 	 */
 	public Heap(String heapRootValue) {
-		insert(heapRootValue);
+		add(heapRootValue);
 	}
 	
 	/* (non-Javadoc)
@@ -63,9 +63,15 @@ public class Heap extends AbstractCollection<Object>{
 	/* (non-Javadoc)
 	 * @see java.util.AbstractCollection#add(java.lang.Object)
 	 */
-	public boolean add(String e) {
-		// TODO Auto-generated method stub
-		return super.add(e);
+	public boolean add(String newHeapValue) {
+		// TODO Return false if add was unsuccessful
+		try {
+			getRootNode().insertNode(newHeapValue);
+			return true;
+		} catch (NullPointerException e) {
+			rootNode = new HeapNode(newHeapValue);
+			return false;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -77,19 +83,6 @@ public class Heap extends AbstractCollection<Object>{
 			return getRootNode().printHeapInPreorderMatchingRegex(".*");
 		} catch (NullPointerException e) {
 			return "[null]";
-		}
-	}
-
-	/**
-	 * Insert a new node of value newHeapValue into the MinHeap.
-	 * 
-	 * @param newHeapValue	The value of the new desired node.
-	 */
-	public void insert(String newHeapValue) {
-		try {
-			getRootNode().insertNode(newHeapValue);
-		} catch (NullPointerException e) {
-			rootNode = new HeapNode(newHeapValue);
 		}
 	}
 	
