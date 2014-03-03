@@ -43,9 +43,9 @@ public class Driver {
 		mh.insert("sit");
 		mh.insert("amet");
 		*/
-		System.out.println("MinHeap in preorder: " + mh.printHeapStringsInPreOrder());
+		//System.out.println("MinHeap in preorder: " + mh.printHeapStringsInPreOrder());
 		
-		System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
+		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
 	}
 
 }

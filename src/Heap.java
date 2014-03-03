@@ -1,3 +1,6 @@
+import java.util.AbstractCollection;
+import java.util.Iterator;
+
 /**
  * The MinHeap class implements a Min-Heap data structure of Strings where root has the
  * smallest value in the heap and each node is smaller than all the values in the heaps
@@ -10,7 +13,7 @@
  * RedID: 809362691
  *
  */
-public class Heap {
+public class Heap extends AbstractCollection<Object>{
 	
 	private HeapNode rootNode;
 	
@@ -30,10 +33,51 @@ public class Heap {
 		insert(heapRootValue);
 	}
 	
-	private HeapNode getRootNode() {
-		return rootNode;
+	/* (non-Javadoc)
+	 * @see java.util.AbstractCollection#iterator()
+	 */
+	@Override
+	public Iterator<Object> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
+
+	/* (non-Javadoc)
+	 * @see java.util.AbstractCollection#size()
+	 */
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.util.AbstractCollection#toArray()
+	 */
+	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return super.toArray();
+	}
+
+	/* (non-Javadoc)
+	 * @see java.util.AbstractCollection#add(java.lang.Object)
+	 */
+	@Override
+	public boolean add(Object e) {
+		// TODO Auto-generated method stub
+		return super.add(e);
+	}
+
+	/* (non-Javadoc)
+	 * @see java.util.AbstractCollection#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
 	/**
 	 * Insert a new node of value newHeapValue into the MinHeap.
 	 * 
@@ -47,32 +91,8 @@ public class Heap {
 		}
 	}
 	
-	/**
-	 * Print out the values of nodes in this MinHeap in preorder.
-	 * Format of output string is "[root] [preorderchild] [etc..]"
-	 * 
-	 * @return	The String of the preorder representation of this MinHeap
-	 */
-	public String printHeapStringsInPreOrder() {
-		try {
-			return getRootNode().printHeapInPreorderMatchingRegex(".*");
-		} catch (NullPointerException e) {
-			return "[null]";
-		}
-	}
-	
-	/**
-	 * Print out the values of nodes in this Minheap that end in 'ing' in preorder.
-	 * Format of output string is "[root] [preorderchild] [etc..]"
-	 * 
-	 * @return	The String of nodes whose values end in 'ing' in this MinHeap in preorder.
-	 */
-	public String printHeapStringsEndingInIngInPreOrder() {
-		try {
-			return getRootNode().printHeapInPreorderMatchingRegex(".*ing");
-		} catch (NullPointerException e) {
-			return "[null]";
-		}
+	private HeapNode getRootNode() {
+		return rootNode;
 	}
 	
 }
