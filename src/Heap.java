@@ -15,7 +15,7 @@ import java.util.Iterator;
  */
 public class Heap extends AbstractCollection<Object>{
 	
-	private HeapNode rootNode;
+	private HeapNode rootNode = new NullHeapNode();
 	
 	/**
 	 * Instantiates an empty MinHeap object
@@ -65,13 +65,8 @@ public class Heap extends AbstractCollection<Object>{
 	 */
 	public boolean add(String newHeapValue) {
 		// TODO Return false if add was unsuccessful
-		try {
-			getRootNode().insertNode(newHeapValue);
-			return true;
-		} catch (NullPointerException e) {
-			rootNode = new HeapNode(newHeapValue);
-			return false;
-		}
+		rootNode = getRootNode().insertNode(newHeapValue);
+		return true;
 	}
 
 	/* (non-Javadoc)
@@ -79,11 +74,7 @@ public class Heap extends AbstractCollection<Object>{
 	 */
 	@Override
 	public String toString() {
-		try {
-			return getRootNode().printHeapInPreorderMatchingRegex(".*");
-		} catch (NullPointerException e) {
-			return "[null]";
-		}
+		return getRootNode().printHeapInPreorderMatchingRegex(".*");
 	}
 	
 	private HeapNode getRootNode() {

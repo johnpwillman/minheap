@@ -12,7 +12,7 @@ public class HeapNodeTest {
 
 	@Test
 	public void testHeapNode() {
-		HeapNode hn = new HeapNode("testHeapNode");
+		ValuedHeapNode hn = new ValuedHeapNode("testHeapNode");
 		
 		assertTrue(
 			"Heap should be equal to [testHeapNode]",
@@ -22,7 +22,7 @@ public class HeapNodeTest {
 
 	@Test
 	public void testGetHeapHeight() {
-		HeapNode hn = new HeapNode("testGetHeapHeight");
+		ValuedHeapNode hn = new ValuedHeapNode("testGetHeapHeight");
 		
 		assertEquals("Height should be 1 on node creation", hn.getHeapHeight(), 1);
 		
@@ -41,7 +41,7 @@ public class HeapNodeTest {
 
 	@Test
 	public void testInsertNode() {
-		HeapNode hn = new HeapNode("testInsertNode");
+		ValuedHeapNode hn = new ValuedHeapNode("testInsertNode");
 		
 		assertTrue(
 			"Heap should be equal to [testInsertNode]",
@@ -79,7 +79,7 @@ public class HeapNodeTest {
 
 	@Test
 	public void testPrintHeapInPreorderMatchingRegex() {
-		HeapNode hn = new HeapNode("lorem");
+		ValuedHeapNode hn = new ValuedHeapNode("lorem");
 		
 		hn.insertNode("ipsum");
 		hn.insertNode("dolor");
