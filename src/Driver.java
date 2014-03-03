@@ -2,7 +2,7 @@
 public class Driver {
 
 	public static void main(String[] args) {
-		MinHeap mh = new MinHeap();
+		Heap mh = new Heap();
 		
 		/*
 		mh.insert("The");

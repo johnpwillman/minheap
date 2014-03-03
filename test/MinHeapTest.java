@@ -12,7 +12,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testMinHeap() {
-		MinHeap mh = new MinHeap();
+		Heap mh = new Heap();
 		
 		assertTrue(
 			"Heap should have no nodes and be null",
@@ -22,7 +22,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testMinHeapString() {
-		MinHeap mh = new MinHeap("test string");
+		Heap mh = new Heap("test string");
 		
 		assertTrue(
 			"Heap should have one node: [test string]",
@@ -32,7 +32,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testInsert() {
-		MinHeap mh = new MinHeap();
+		Heap mh = new Heap();
 		
 		mh.insert("single insert");
 		
@@ -51,7 +51,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testPrintHeapStringsInPreOrder() {
-		MinHeap mh = new MinHeap();
+		Heap mh = new Heap();
 		
 		mh.insert("run");
 		mh.insert("runner");
@@ -71,7 +71,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testPrintHeapStringsEndingInIngInPreOrder() {
-		MinHeap mh = new MinHeap();
+		Heap mh = new Heap();
 		
 		mh.insert("run");
 		mh.insert("runner");
