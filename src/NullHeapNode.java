@@ -27,4 +27,9 @@ public class NullHeapNode extends HeapNode {
 		return "";
 	}
 
+	@Override
+	public String toString() {
+		return "";
+	}
+
 }

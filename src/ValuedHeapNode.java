@@ -131,4 +131,15 @@ public class ValuedHeapNode extends HeapNode {
 		
 		return preorderString.trim();
 	}
+
+	@Override
+	public String toString() {
+		String formattedHeapString;
+		
+		formattedHeapString = "[" + getNodeValue() + "] " + getLeftChild().toString();
+		formattedHeapString = formattedHeapString.trim() + " " + getRightChild().toString();
+		formattedHeapString = formattedHeapString.trim();
+		
+		return formattedHeapString;
+	}
 }

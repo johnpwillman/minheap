@@ -73,7 +73,8 @@ public class Heap extends AbstractCollection<Object>{
 	 */
 	@Override
 	public String toString() {
-		return getRootNode().getHeapValuesMatchingRegex(".*");
+		//return getRootNode().getHeapValuesMatchingRegex(".*");
+		return getRootNode().toString();
 	}
 	
 	private HeapNode getRootNode() {
