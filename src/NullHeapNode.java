@@ -23,7 +23,7 @@ public class NullHeapNode extends HeapNode {
 	}
 
 	@Override
-	public String printHeapInPreorderMatchingRegex(String regexToPrint) {
+	public String getHeapValuesMatchingRegex(String regexToPrint) {
 		return "";
 	}
 

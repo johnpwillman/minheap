@@ -16,7 +16,7 @@ public class HeapNodeTest {
 		
 		assertTrue(
 			"Heap should be equal to [testHeapNode]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[testHeapNode]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[testHeapNode]")
 		);
 	}
 
@@ -45,35 +45,35 @@ public class HeapNodeTest {
 		
 		assertTrue(
 			"Heap should be equal to [testInsertNode]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[testInsertNode]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[testInsertNode]")
 		);
 		
 		hn.insertNode("b");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[b] [testInsertNode]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode]")
 		);
 		
 		hn.insertNode("c");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode] [c]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[b] [testInsertNode] [c]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode] [c]")
 		);
 		
 		hn.insertNode("z");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode] [z] [c]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[b] [testInsertNode] [z] [c]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode] [z] [c]")
 		);
 		
 		hn.insertNode("a");
 		
 		assertTrue(
 			"Heap should be equal to [a] [testInsertNode] [z] [b] [c]",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[a] [testInsertNode] [z] [b] [c]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[a] [testInsertNode] [z] [b] [c]")
 		);
 	}
 
@@ -88,17 +88,17 @@ public class HeapNodeTest {
 		
 		assertTrue(
 			"Heap should be equal to [amet] [lorem] [sit] [dolor] [ipsum] (all words)",
-			hn.printHeapInPreorderMatchingRegex(".*").equals("[amet] [lorem] [sit] [dolor] [ipsum]")
+			hn.getHeapValuesMatchingRegex(".*").equals("[amet] [lorem] [sit] [dolor] [ipsum]")
 		);
 		
 		assertTrue(
 			"Heap should be equal to [lorem] [dolor] (only words with 'r')",
-			hn.printHeapInPreorderMatchingRegex(".*r.*").equals("[lorem] [dolor]")
+			hn.getHeapValuesMatchingRegex(".*r.*").equals("[lorem] [dolor]")
 		);
 		
 		assertTrue(
 			"Heap should be equal to [sit] (only words beginnning with 's')",
-			hn.printHeapInPreorderMatchingRegex("s.*").equals("[sit]")
+			hn.getHeapValuesMatchingRegex("s.*").equals("[sit]")
 		);
 	}
 

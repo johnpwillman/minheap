@@ -13,5 +13,5 @@ public abstract class HeapNode {
 	
 	public abstract HeapNode insertNode(String insertValue);
 	
-	public abstract String printHeapInPreorderMatchingRegex(String regexToPrint);
+	public abstract String getHeapValuesMatchingRegex(String regexToPrint);
 }
