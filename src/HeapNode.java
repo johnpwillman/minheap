@@ -13,8 +13,8 @@ import java.text.Collator;
 public class HeapNode {
 	
 	private String nodeValue;
-	private HeapNode childNode1;
-	private HeapNode childNode2;
+	private HeapNode leftChild;
+	private HeapNode rightChild;
 	
 	/**
 	 * Creates a HeapNode object with a value
@@ -25,6 +25,10 @@ public class HeapNode {
 		nodeValue = value;
 	}
 	
+	public boolean isNull() {
+		return false;
+	}
+	
 	private void setNodeValue(String value) {
 		nodeValue = value;
 	}
@@ -33,20 +37,20 @@ public class HeapNode {
 		return nodeValue;
 	}
 	
-	private void setChildNode1(HeapNode newChildNode1) {
-		childNode1 = newChildNode1;
+	private void setLeftChild(HeapNode newLeftChild) {
+		leftChild = newLeftChild;
 	}
 	
-	private HeapNode getChildNode1() {
-		return childNode1;
+	private HeapNode getLeftChild() {
+		return leftChild;
 	}
 	
-	private void setChildNode2(HeapNode newChildNode2) {
-		childNode2 = newChildNode2;
+	private void setRightChild(HeapNode newRightChild) {
+		rightChild = newRightChild;
 	}
 	
-	private HeapNode getChildNode2() {
-		return childNode2;
+	private HeapNode getRightChild() {
+		return rightChild;
 	}
 	
 	/**
@@ -56,22 +60,22 @@ public class HeapNode {
 	 * @return	The integer representation of this heap's height
 	 */
 	public int getHeapHeight() {
-		int child1Height, child2Height;
+		int leftChildHeight, rightChildHeight;
 
 		try {
-			child1Height = getChildNode1().getHeapHeight();
+			leftChildHeight = getLeftChild().getHeapHeight();
 		} catch (NullPointerException e) {
-			child1Height = 0;
+			leftChildHeight = 0;
 		}
 		
 		try {
-			child2Height = getChildNode2().getHeapHeight();
+			rightChildHeight = getRightChild().getHeapHeight();
 		} catch (NullPointerException e) {
-			child2Height = 0;
+			rightChildHeight = 0;
 		}
 		
 		//Add one to height for recursive call
-		return ((child1Height >= child2Height) ? child1Height : child2Height) + 1;
+		return ((leftChildHeight >= rightChildHeight) ? leftChildHeight : rightChildHeight) + 1;
 	}
 	
 	/**
@@ -95,19 +99,19 @@ public class HeapNode {
 		}
 		
 		try {
-			if (getChildNode1().getHeapHeight() <= getChildNode2().getHeapHeight()) {
-				getChildNode1().insertNode(insertValue);
+			if (getLeftChild().getHeapHeight() <= getRightChild().getHeapHeight()) {
+				getLeftChild().insertNode(insertValue);
 			} else {
-				getChildNode2().insertNode(insertValue);
+				getRightChild().insertNode(insertValue);
 			}
 		} catch (NullPointerException e) {
 			//If we are at the bottom of a heap, insertValue becomes new leaf node
 			HeapNode newNode = new HeapNode(insertValue);
 			
-			if (getChildNode1() == null) {
-				setChildNode1(newNode);
+			if (getLeftChild() == null) {
+				setLeftChild(newNode);
 			} else {
-				setChildNode2(newNode);
+				setRightChild(newNode);
 			}
 		}
 	}
@@ -126,13 +130,13 @@ public class HeapNode {
 		}
 		
 		try {
-			preorderString += " " + getChildNode1().printHeapInPreorderMatchingRegex(regexToPrint);
+			preorderString += " " + getLeftChild().printHeapInPreorderMatchingRegex(regexToPrint);
 		} catch (NullPointerException e) {
 			//This node does not have a childNode1. There is nothing to print.
 		}
 		
 		try {
-			preorderString += " " + getChildNode2().printHeapInPreorderMatchingRegex(regexToPrint);
+			preorderString += " " + getRightChild().printHeapInPreorderMatchingRegex(regexToPrint);
 		} catch (NullPointerException e) {
 			//This node does not have a childNode2. There is nothing to print.
 		}
