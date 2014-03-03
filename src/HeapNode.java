@@ -9,6 +9,8 @@ public abstract class HeapNode {
 	
 	public abstract int getHeapHeight();
 	
+	public abstract int getHeapSize();
+	
 	public abstract HeapNode insertNode(String insertValue);
 	
 	public abstract String printHeapInPreorderMatchingRegex(String regexToPrint);

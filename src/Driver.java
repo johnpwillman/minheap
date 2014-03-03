@@ -45,6 +45,7 @@ public class Driver {
 		mh.add("amet");
 		*/
 		System.out.println("MinHeap in preorder: " + mh.toString());
+		System.out.println("MinHeap size: " + mh.size());
 		
 		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
 	}

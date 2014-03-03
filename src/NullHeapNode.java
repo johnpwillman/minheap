@@ -12,6 +12,11 @@ public class NullHeapNode extends HeapNode {
 	}
 
 	@Override
+	public int getHeapSize() {
+		return 0;
+	}
+
+	@Override
 	public HeapNode insertNode(String insertValue) {
 		ValuedHeapNode vhn = new ValuedHeapNode(insertValue);
 		return vhn;

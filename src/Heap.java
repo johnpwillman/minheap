@@ -42,13 +42,12 @@ public class Heap extends AbstractCollection<Object>{
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.util.AbstractCollection#size()
+	/**
+	 * 
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getRootNode().getHeapSize();
 	}
 
 	/* (non-Javadoc)

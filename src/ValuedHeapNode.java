@@ -73,6 +73,11 @@ public class ValuedHeapNode extends HeapNode {
 		//Add one to height for recursive call
 		return ((leftChildHeight >= rightChildHeight) ? leftChildHeight : rightChildHeight) + 1;
 	}
+
+	@Override
+	public int getHeapSize() {
+		return 1 + getLeftChild().getHeapSize() + getRightChild().getHeapSize();
+	}
 	
 	/**
 	 * Insert a node at this HeapNode's position on the heap.
