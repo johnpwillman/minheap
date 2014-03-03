@@ -55,16 +55,15 @@ public class Heap extends AbstractCollection<Object>{
 	 * @see java.util.AbstractCollection#toArray()
 	 */
 	@Override
-	public Object[] toArray() {
+	public String[] toArray() {
 		// TODO Auto-generated method stub
-		return super.toArray();
+		return super.toArray(new String[0]);
 	}
 
 	/* (non-Javadoc)
 	 * @see java.util.AbstractCollection#add(java.lang.Object)
 	 */
-	@Override
-	public boolean add(Object e) {
+	public boolean add(String e) {
 		// TODO Auto-generated method stub
 		return super.add(e);
 	}
@@ -74,8 +73,11 @@ public class Heap extends AbstractCollection<Object>{
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		try {
+			return getRootNode().printHeapInPreorderMatchingRegex(".*");
+		} catch (NullPointerException e) {
+			return "[null]";
+		}
 	}
 
 	/**
