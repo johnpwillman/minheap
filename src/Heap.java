@@ -38,8 +38,8 @@ public class Heap extends AbstractCollection<String>{
 	 */
 	@Override
 	public Iterator<String> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		Iterator<String> itr = (Iterator<String>) new HeapIterator(getRootNode());
+		return itr;
 	}
 
 	/**
@@ -56,10 +56,16 @@ public class Heap extends AbstractCollection<String>{
 	@Override
 	public String[] toArray() {
 		String[] heapArray = new String[size()];
+		int i = 0;
 		
-		// TODO Use Interator to populate heapArray
+		Iterator<String> heapItr = this.iterator();
 		
-		return super.toArray(new String[0]);
+		while(heapItr.hasNext()) {
+			heapArray[i] = heapItr.next();
+			i++;
+		}
+		
+		return heapArray;
 	}
 
 	/* (non-Javadoc)

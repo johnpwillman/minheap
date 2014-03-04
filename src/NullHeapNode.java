@@ -7,6 +7,21 @@ public class NullHeapNode extends HeapNode {
 	}
 
 	@Override
+	public HeapNode getLeftChild() {
+		return this;
+	}
+
+	@Override
+	public HeapNode getRightChild() {
+		return this;
+	}
+
+	@Override
+	public String getNodeValue() {
+		return "";
+	}
+
+	@Override
 	public int getHeapHeight() {
 		return 0;
 	}

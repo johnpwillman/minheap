@@ -7,6 +7,12 @@ public abstract class HeapNode {
 	
 	public abstract boolean isNull();
 	
+	public abstract HeapNode getLeftChild();
+	
+	public abstract HeapNode getRightChild();
+	
+	public abstract String getNodeValue();
+	
 	public abstract int getHeapHeight();
 	
 	public abstract int getHeapSize();

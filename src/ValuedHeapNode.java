@@ -37,24 +37,24 @@ public class ValuedHeapNode extends HeapNode {
 		nodeValue = value;
 	}
 	
-	private String getNodeValue() {
-		return nodeValue;
-	}
-	
 	private void setLeftChild(HeapNode newLeftChild) {
 		leftChild = newLeftChild;
-	}
-	
-	private HeapNode getLeftChild() {
-		return leftChild;
 	}
 	
 	private void setRightChild(HeapNode newRightChild) {
 		rightChild = newRightChild;
 	}
 	
-	private HeapNode getRightChild() {
+	public HeapNode getLeftChild() {
+		return leftChild;
+	}
+	
+	public HeapNode getRightChild() {
 		return rightChild;
+	}
+	
+	public String getNodeValue() {
+		return nodeValue;
 	}
 	
 	/**

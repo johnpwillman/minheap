@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 
 public class Driver {
 
@@ -46,6 +48,12 @@ public class Driver {
 		*/
 		System.out.println("MinHeap in preorder: " + mh.toString());
 		System.out.println("MinHeap size: " + mh.size());
+		
+		Iterator<String> itr = mh.iterator();
+		
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
 		
 		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
 	}
