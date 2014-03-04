@@ -55,7 +55,10 @@ public class Heap extends AbstractCollection<Object>{
 	 */
 	@Override
 	public String[] toArray() {
-		// TODO Auto-generated method stub
+		String[] heapArray = new String[size()];
+		
+		// TODO Use Interator to populate heapArray
+		
 		return super.toArray(new String[0]);
 	}
 
