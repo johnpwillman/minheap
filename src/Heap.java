@@ -13,7 +13,7 @@ import java.util.Iterator;
  * RedID: 809362691
  *
  */
-public class Heap extends AbstractCollection<Object>{
+public class Heap extends AbstractCollection<String>{
 	
 	private HeapNode rootNode = new NullHeapNode();
 	
@@ -37,7 +37,7 @@ public class Heap extends AbstractCollection<Object>{
 	 * @see java.util.AbstractCollection#iterator()
 	 */
 	@Override
-	public Iterator<Object> iterator() {
+	public Iterator<String> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
