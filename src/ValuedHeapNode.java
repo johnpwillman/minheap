@@ -87,7 +87,7 @@ public class ValuedHeapNode extends HeapNode {
 	 * 
 	 * @param insertValue	Value of the node being inserted.
 	 */
-	public HeapNode insertNode(String insertValue) {
+	public HeapNode add(String insertValue) {
 		HeapNode nodeAfterInsert;
 		
 		Collator nodeCollator = Collator.getInstance();
@@ -102,10 +102,10 @@ public class ValuedHeapNode extends HeapNode {
 		}
 		
 		if (getLeftChild().getHeapHeight() <= getRightChild().getHeapHeight()) {
-			nodeAfterInsert = getLeftChild().insertNode(insertValue);
+			nodeAfterInsert = getLeftChild().add(insertValue);
 			setLeftChild(nodeAfterInsert);
 		} else {
-			nodeAfterInsert = getRightChild().insertNode(insertValue);
+			nodeAfterInsert = getRightChild().add(insertValue);
 			setRightChild(nodeAfterInsert);
 		}
 		

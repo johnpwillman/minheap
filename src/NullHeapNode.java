@@ -32,7 +32,7 @@ public class NullHeapNode extends HeapNode {
 	}
 
 	@Override
-	public HeapNode insertNode(String insertValue) {
+	public HeapNode add(String insertValue) {
 		ValuedHeapNode vhn = new ValuedHeapNode(insertValue);
 		return vhn;
 	}

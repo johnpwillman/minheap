@@ -73,7 +73,7 @@ public class Heap extends AbstractCollection<String>{
 	 */
 	public boolean add(String newHeapValue) {
 		// TODO Return false if add was unsuccessful
-		rootNode = getRootNode().insertNode(newHeapValue);
+		rootNode = getRootNode().add(newHeapValue);
 		return true;
 	}
 

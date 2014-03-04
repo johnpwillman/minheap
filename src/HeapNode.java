@@ -17,7 +17,7 @@ public abstract class HeapNode {
 	
 	public abstract int getHeapSize();
 	
-	public abstract HeapNode insertNode(String insertValue);
+	public abstract HeapNode add(String insertValue);
 	
 	public abstract String getHeapValuesMatchingRegex(String regexToPrint);
 	

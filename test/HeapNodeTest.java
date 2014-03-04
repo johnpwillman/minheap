@@ -26,15 +26,15 @@ public class HeapNodeTest {
 		
 		assertEquals("Height should be 1 on node creation", hn.getHeapHeight(), 1);
 		
-		hn.insertNode("SecondInsert");
+		hn.add("SecondInsert");
 
 		assertEquals("Height should be 2 after second insert", hn.getHeapHeight(), 2);
 		
-		hn.insertNode("ThirdInsert");
+		hn.add("ThirdInsert");
 		
 		assertEquals("Height should still be 2 after third insert", hn.getHeapHeight(), 2);
 		
-		hn.insertNode("FourthInsert");
+		hn.add("FourthInsert");
 		
 		assertEquals("Height should be 3 after fourth insert", hn.getHeapHeight(), 3);
 	}
@@ -48,28 +48,28 @@ public class HeapNodeTest {
 			hn.getHeapValuesMatchingRegex(".*").equals("[testInsertNode]")
 		);
 		
-		hn.insertNode("b");
+		hn.add("b");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode]",
 			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode]")
 		);
 		
-		hn.insertNode("c");
+		hn.add("c");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode] [c]",
 			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode] [c]")
 		);
 		
-		hn.insertNode("z");
+		hn.add("z");
 		
 		assertTrue(
 			"Heap should be equal to [b] [testInsertNode] [z] [c]",
 			hn.getHeapValuesMatchingRegex(".*").equals("[b] [testInsertNode] [z] [c]")
 		);
 		
-		hn.insertNode("a");
+		hn.add("a");
 		
 		assertTrue(
 			"Heap should be equal to [a] [testInsertNode] [z] [b] [c]",
@@ -81,10 +81,10 @@ public class HeapNodeTest {
 	public void testPrintHeapInPreorderMatchingRegex() {
 		ValuedHeapNode hn = new ValuedHeapNode("lorem");
 		
-		hn.insertNode("ipsum");
-		hn.insertNode("dolor");
-		hn.insertNode("sit");
-		hn.insertNode("amet");
+		hn.add("ipsum");
+		hn.add("dolor");
+		hn.add("sit");
+		hn.add("amet");
 		
 		assertTrue(
 			"Heap should be equal to [amet] [lorem] [sit] [dolor] [ipsum] (all words)",
