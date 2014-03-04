@@ -38,7 +38,7 @@ public class Heap extends AbstractCollection<String>{
 	 */
 	@Override
 	public Iterator<String> iterator() {
-		Iterator<String> itr = (Iterator<String>) new HeapIterator(getRootNode());
+		Iterator<String> itr = new HeapIterator(getRootNode());
 		return itr;
 	}
 

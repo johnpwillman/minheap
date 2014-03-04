@@ -5,23 +5,23 @@ import java.util.Stack;
 public class HeapIterator implements Iterator<String> {
 	
 	HeapNode topNode;
-	int numberIterated, size;
 	Stack<HeapNode> traversalStack = new Stack<HeapNode>();
 	
 	public HeapIterator(HeapNode rootNode) {
 		topNode = rootNode;
-		numberIterated = 0;
-		size = topNode.getHeapSize();
 		
 		traversalStack.push(topNode);
 	}
 
 	@Override
 	public boolean hasNext() {
-		if (numberIterated < size) {
-			return true;
+		//if (numberIterated < size) {
+		//	return true;
+		//}
+		if (traversalStack.isEmpty()) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	@Override
@@ -30,7 +30,6 @@ public class HeapIterator implements Iterator<String> {
 		
 		if (!topNode.isNull()) {
 			returnValue = topNode.getNodeValue();
-			numberIterated++;
 			if (!topNode.getRightChild().isNull()) {
 				traversalStack.push(topNode.getRightChild());
 			}
