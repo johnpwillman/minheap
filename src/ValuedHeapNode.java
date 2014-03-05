@@ -112,9 +112,9 @@ public class ValuedHeapNode extends HeapNode {
 		return this;
 	}
 	
-	public String valueSwap() {
+	public boolean valueShouldSwap(String currentValue, String newValue) {
 		//TODO
-		return null;
+		return false;
 	}
 	
 	/**

@@ -2,9 +2,9 @@
 public class MinHeapStrategy implements HeapStrategy {
 
 	@Override
-	public String valueSwap() {
+	public boolean valueShouldSwap(String currentValue, String newValue) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
 	}
 
 }

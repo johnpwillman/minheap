@@ -1,4 +1,4 @@
 
 public interface HeapStrategy {
-	public String valueSwap();
+	public boolean valueShouldSwap(String currentValue, String newValue);
 }
