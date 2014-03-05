@@ -55,6 +55,12 @@ public class Driver {
 			System.out.println("itr: " + itr.next());
 		}
 		
+		IngFilter ingF = new IngFilter(mh.iterator());
+		
+		while (ingF.hasNext()) {
+			System.out.println("ingF: " + ingF.next());
+		}
+		
 		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
 	}
 
