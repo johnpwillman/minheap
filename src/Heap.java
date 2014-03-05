@@ -17,7 +17,7 @@ public class Heap extends AbstractCollection<String>{
 	
 	private HeapNode rootNode = new NullHeapNode();
 	
-	private HeapStrategy heapStrat = new MinHeapStrategy();
+	private HeapStrategy heapStrat = new MinHeapStrategy();//Heap is a MinHeap by default
 	
 	/**
 	 * Instantiates an empty Heap object
@@ -72,7 +72,7 @@ public class Heap extends AbstractCollection<String>{
 	}
 
 	/**
-	 * Adds a new String value to the Heap.
+	 * Adds a new String value to the Heap. Returns false if add fails.
 	 */
 	@Override
 	public boolean add(String newHeapValue) {
