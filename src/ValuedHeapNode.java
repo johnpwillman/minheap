@@ -112,6 +112,11 @@ public class ValuedHeapNode extends HeapNode {
 		return this;
 	}
 	
+	public String valueSwap() {
+		//TODO
+		return null;
+	}
+	
 	/**
 	 * Prints out the values of the heap, matching the input REGEX, in preorder.
 	 * 
