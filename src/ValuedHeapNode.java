@@ -90,12 +90,10 @@ public class ValuedHeapNode extends HeapNode {
 	public HeapNode add(String insertValue) {
 		HeapNode nodeAfterInsert;
 		
-		Collator nodeCollator = Collator.getInstance();
-		
 		String valueSwap;
 		
 		//The Collator compares strings in true alphabetical, rather than lexicographical, order
-		if (nodeCollator.compare(insertValue, getNodeValue()) <= 0) {
+		if (valueShouldSwap(getNodeValue(), insertValue)) {
 			valueSwap = getNodeValue();
 			setNodeValue(insertValue);
 			insertValue = valueSwap;
@@ -114,6 +112,11 @@ public class ValuedHeapNode extends HeapNode {
 	
 	public boolean valueShouldSwap(String currentValue, String newValue) {
 		//TODO
+		Collator nodeCollator = Collator.getInstance();
+		
+		if (nodeCollator.compare(newValue, currentValue) <= 0) {
+			return true;
+		}
 		return false;
 	}
 	
