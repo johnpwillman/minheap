@@ -17,20 +17,22 @@ public class Heap extends AbstractCollection<String>{
 	
 	private HeapNode rootNode = new NullHeapNode();
 	
+	private HeapStrategy heapStrat = new MinHeapStrategy();
+	
 	/**
 	 * Instantiates an empty Heap object
 	 */
 	public Heap() {
-		
+		rootNode.setHeapStrategy(heapStrat);
 	}
-	
+
 	/**
-	 * Instantiates a Heap object with heapRootValue as the value of the root node.
+	 * Create a Heap that operates according to the given strategy.
 	 * 
-	 * @param heapRootValue	The desired value of the root node.
+	 * @param strategy
 	 */
-	public Heap(String heapRootValue) {
-		add(heapRootValue);
+	public Heap(HeapStrategy strategy) {
+		rootNode.setHeapStrategy(strategy);
 	}
 	
 	/**
@@ -74,8 +76,12 @@ public class Heap extends AbstractCollection<String>{
 	 */
 	@Override
 	public boolean add(String newHeapValue) {
-		// TODO Return false if add was unsuccessful
-		rootNode = getRootNode().add(newHeapValue);
+		try {
+			rootNode = getRootNode().add(newHeapValue);
+		} catch (Exception e) {
+			return false;
+		}
+		
 		return true;
 	}
 

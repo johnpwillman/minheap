@@ -5,7 +5,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		System.out.println("hello".toString());
-		Heap mh = new Heap();
+		Heap mh = new Heap(new MinHeapStrategy());
 		
 		/*
 		mh.add("The");
@@ -52,7 +52,7 @@ public class Driver {
 		Iterator<String> itr = mh.iterator();
 		
 		while (itr.hasNext()) {
-			System.out.println(itr.next());
+			System.out.println("itr: " + itr.next());
 		}
 		
 		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());

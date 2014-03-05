@@ -1,4 +1,4 @@
-import java.text.Collator;
+
 
 /**
  * This class creates nodes amenable to the definition of nodes in a Min-Heap
@@ -16,8 +16,9 @@ public class ValuedHeapNode extends HeapNode {
 	private HeapNode leftChild = new NullHeapNode();
 	private HeapNode rightChild = new NullHeapNode();
 	
+	private HeapStrategy heapStrat;
+	
 	public ValuedHeapNode() {
-		
 	}
 	
 	/**
@@ -57,6 +58,12 @@ public class ValuedHeapNode extends HeapNode {
 		return nodeValue;
 	}
 	
+	public void setHeapStrategy(HeapStrategy strategy) {
+		heapStrat = strategy;
+		getLeftChild().setHeapStrategy(heapStrat);
+		getRightChild().setHeapStrategy(heapStrat);
+	}
+	
 	/**
 	 * Return maximum number of levels from this node down
 	 * through its children.
@@ -93,7 +100,7 @@ public class ValuedHeapNode extends HeapNode {
 		String valueSwap;
 		
 		//The Collator compares strings in true alphabetical, rather than lexicographical, order
-		if (valueShouldSwap(getNodeValue(), insertValue)) {
+		if (heapStrat.valueShouldSwap(getNodeValue(), insertValue)) {
 			valueSwap = getNodeValue();
 			setNodeValue(insertValue);
 			insertValue = valueSwap;
@@ -108,16 +115,6 @@ public class ValuedHeapNode extends HeapNode {
 		}
 		
 		return this;
-	}
-	
-	public boolean valueShouldSwap(String currentValue, String newValue) {
-		//TODO
-		Collator nodeCollator = Collator.getInstance();
-		
-		if (nodeCollator.compare(newValue, currentValue) <= 0) {
-			return true;
-		}
-		return false;
 	}
 	
 	/**

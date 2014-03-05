@@ -13,6 +13,8 @@ public abstract class HeapNode {
 	
 	public abstract String getNodeValue();
 	
+	public abstract void setHeapStrategy(HeapStrategy strategy);
+	
 	public abstract int getHeapHeight();
 	
 	public abstract int getHeapSize();
