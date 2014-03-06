@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class IngFilter {
+public class IngFilter implements Iterator<String> {
 	
 	Iterator<String> ingItr;
 	String nextIng = "";
@@ -30,7 +30,7 @@ public class IngFilter {
 	
 	public String next() {
 		String returnValue;
-		
+
 		if (hasNext()) {
 			returnValue = nextIng;
 			nextIng = "";
@@ -39,5 +39,11 @@ public class IngFilter {
 		}
 		
 		return returnValue;
+	}
+
+	@Override
+	public void remove() {
+		// TODO Auto-generated method stub
+		
 	}
 }

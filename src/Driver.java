@@ -5,7 +5,8 @@ public class Driver {
 
 	public static void main(String[] args) {
 		System.out.println("hello".toString());
-		Heap mh = new Heap(new MinHeapStrategy());
+		//Heap mh = new Heap(new MinHeapStrategy());
+		Heap mh = new IngDecorator(new ConcreteHeap(new MinHeapStrategy()));
 		
 		/*
 		mh.add("The");
@@ -46,19 +47,13 @@ public class Driver {
 		mh.add("sit");
 		mh.add("amet");
 		*/
-		System.out.println("MinHeap in preorder: " + mh.toString());
-		System.out.println("MinHeap size: " + mh.size());
+		System.out.println("Heap in preorder: " + mh.toString());
+		System.out.println("Heap size: " + mh.size());
 		
 		Iterator<String> itr = mh.iterator();
 		
 		while (itr.hasNext()) {
 			System.out.println("itr: " + itr.next());
-		}
-		
-		IngFilter ingF = new IngFilter(mh.iterator());
-		
-		while (ingF.hasNext()) {
-			System.out.println("ingF: " + ingF.next());
 		}
 		
 		//System.out.println(mh.printHeapStringsEndingInIngInPreOrder());
