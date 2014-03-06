@@ -16,6 +16,10 @@ public class HeapDecorator extends Heap {
 	
 	private ConcreteHeap decoratedHeap;
 	
+	/**
+	 * New HeapDecorators implement the methods using a ConcreteHeap
+	 * @param heapToDecorate
+	 */
 	public HeapDecorator(ConcreteHeap heapToDecorate) {
 		decoratedHeap = heapToDecorate;
 	}

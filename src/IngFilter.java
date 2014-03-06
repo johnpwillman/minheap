@@ -19,6 +19,10 @@ public class IngFilter implements Iterator<String> {
 		ingItr = input;
 	}
 	
+	/**
+	 * Returns true as long as there are items left in the Collection
+	 * that end in 'ing' that have not been iterated over.
+	 */
 	public boolean hasNext() {
 		String testString = "";
 		
@@ -36,6 +40,11 @@ public class IngFilter implements Iterator<String> {
 		return false;
 	}
 	
+	/**
+	 * Returns the next unaccessed value in the Collection ending
+	 * in 'ing' in preorder. Used in combination with hasNext() to
+	 * loop over the entire collection safely.
+	 */
 	public String next() {
 		String returnValue;
 
@@ -49,9 +58,12 @@ public class IngFilter implements Iterator<String> {
 		return returnValue;
 	}
 
+	/**
+	 * NOT IMPLEMENTED
+	 */
 	@Override
 	public void remove() {
-		// TODO Auto-generated method stub
+		// Left Unimplemented
 		
 	}
 }

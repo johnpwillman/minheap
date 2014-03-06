@@ -46,22 +46,26 @@ public class ValuedHeapNode extends HeapNode {
 		rightChild = newRightChild;
 	}
 	
-	public HeapNode getLeftChild() {
+	public HeapNode left() {
 		return leftChild;
 	}
 	
-	public HeapNode getRightChild() {
+	public HeapNode right() {
 		return rightChild;
 	}
 	
-	public String getNodeValue() {
+	public String getValue() {
 		return nodeValue;
 	}
 	
+	/**
+	 * Sets the strategy of node insertion as specified by the supplied
+	 * HeapStrategy.
+	 */
 	public void setHeapStrategy(HeapStrategy strategy) {
 		heapStrat = strategy;
-		getLeftChild().setHeapStrategy(heapStrat);
-		getRightChild().setHeapStrategy(heapStrat);
+		left().setHeapStrategy(heapStrat);
+		right().setHeapStrategy(heapStrat);
 	}
 	
 	/**
@@ -70,27 +74,30 @@ public class ValuedHeapNode extends HeapNode {
 	 * 
 	 * @return	The integer representation of this heap's height
 	 */
-	public int getHeapHeight() {
+	public int height() {
 		int leftChildHeight, rightChildHeight;
 
-		leftChildHeight = getLeftChild().getHeapHeight();
+		leftChildHeight = left().height();
 		
-		rightChildHeight = getRightChild().getHeapHeight();
+		rightChildHeight = right().height();
 		
 		//Add one to height for recursive call
 		return ((leftChildHeight >= rightChildHeight) ? leftChildHeight : rightChildHeight) + 1;
 	}
 
+	/**
+	 * Return the number of valued elements in the node (sub)tree where this
+	 * node is the root.
+	 */
 	@Override
-	public int getHeapSize() {
-		return 1 + getLeftChild().getHeapSize() + getRightChild().getHeapSize();
+	public int size() {
+		return 1 + left().size() + right().size();
 	}
 	
 	/**
 	 * Insert a node at this HeapNode's position on the heap.
-	 * If, this node-to-insert's value is less than the value of this
-	 * node, the node-to-insert replaces the current node and the
-	 * current node is inserted to the child heap of least height.
+	 * The node swap strategy is determined by the heap's
+	 * current HeapStrategy.
 	 * 
 	 * @param insertValue	Value of the node being inserted.
 	 */
@@ -99,30 +106,33 @@ public class ValuedHeapNode extends HeapNode {
 		
 		String valueSwap;
 		
-		//The Collator compares strings in true alphabetical, rather than lexicographical, order
-		if (heapStrat.valueShouldSwap(getNodeValue(), insertValue)) {
-			valueSwap = getNodeValue();
+		if (heapStrat.valueShouldSwap(getValue(), insertValue)) {
+			valueSwap = getValue();
 			setNodeValue(insertValue);
 			insertValue = valueSwap;
 		}
 		
-		if (getLeftChild().getHeapHeight() <= getRightChild().getHeapHeight()) {
-			nodeAfterInsert = getLeftChild().add(insertValue);
+		if (left().height() <= right().height()) {
+			nodeAfterInsert = left().add(insertValue);
 			setLeftChild(nodeAfterInsert);
 		} else {
-			nodeAfterInsert = getRightChild().add(insertValue);
+			nodeAfterInsert = right().add(insertValue);
 			setRightChild(nodeAfterInsert);
 		}
 		
 		return this;
 	}
 
+	/**
+	 * Returns a preorder string representation of of this node and its
+	 * subtrees.
+	 */
 	@Override
 	public String toString() {
 		String formattedHeapString;
 		
-		formattedHeapString = "[" + getNodeValue() + "] " + getLeftChild().toString();
-		formattedHeapString = formattedHeapString.trim() + " " + getRightChild().toString();
+		formattedHeapString = "[" + getValue() + "] " + left().toString();
+		formattedHeapString = formattedHeapString.trim() + " " + right().toString();
 		formattedHeapString = formattedHeapString.trim();
 		
 		return formattedHeapString;

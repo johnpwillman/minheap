@@ -19,10 +19,18 @@ public class IngDecorator extends HeapDecorator {
 		super(heapToDecorate);
 	}
 	
+	/**
+	 * Returns an iterator over the collection that only deals with
+	 * words ending in 'ing' in the structure.
+	 */
+	@Override
 	public Iterator<String> iterator() {
 		return new IngFilter(super.iterator());
 	}
 	
+	/**
+	 * Returns the number of words ending in 'ing' in the collection.
+	 */
 	@Override
 	public int size() {
 		int size = 0;
@@ -37,6 +45,10 @@ public class IngDecorator extends HeapDecorator {
 		return size;
 	}
 
+	/**
+	 * Returns a String Array with an element for each word in the
+	 * collection ending in 'ing'.
+	 */
 	@Override
 	public String[] toArray() {
 		String[] sArray = new String[size()];
@@ -52,6 +64,10 @@ public class IngDecorator extends HeapDecorator {
 		return sArray;
 	}
 
+	/**
+	 * Returns the string representation of all of the words in the
+	 * collection which end in 'ing'.
+	 */
 	@Override
 	public String toString() {
 		String heapIngString = "";

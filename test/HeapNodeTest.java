@@ -27,22 +27,22 @@ public class HeapNodeTest {
 		HeapNode nn = new NullHeapNode();
 		//nn.setHeapStrategy(new MinHeapStrategy());
 		
-		assertEquals("Height should be 1 on node creation", hn.getHeapHeight(), 1);
+		assertEquals("Height should be 1 on node creation", hn.height(), 1);
 		
 		hn.add("SecondInsert");
 
-		assertEquals("Height should be 2 after second insert", hn.getHeapHeight(), 2);
+		assertEquals("Height should be 2 after second insert", hn.height(), 2);
 		
 		hn.add("ThirdInsert");
 		
-		assertEquals("Height should still be 2 after third insert", hn.getHeapHeight(), 2);
+		assertEquals("Height should still be 2 after third insert", hn.height(), 2);
 		
 		hn.add("FourthInsert");
 		
-		assertEquals("Height should be 3 after fourth insert", hn.getHeapHeight(), 3);
+		assertEquals("Height should be 3 after fourth insert", hn.height(), 3);
 		
 		
-		assertEquals("Height should be 0 for null node", nn.getHeapHeight(), 0);
+		assertEquals("Height should be 0 for null node", nn.height(), 0);
 	}
 	
 	@Test
@@ -51,21 +51,21 @@ public class HeapNodeTest {
 		hn.setHeapStrategy(new MinHeapStrategy());
 		HeapNode nn = new NullHeapNode();
 		
-		assertEquals("Size should be 1 on node creation", hn.getHeapSize(), 1);
+		assertEquals("Size should be 1 on node creation", hn.size(), 1);
 		
 		hn.add("SecondInsert");
 
-		assertEquals("Size should be 2 after second insert", hn.getHeapSize(), 2);
+		assertEquals("Size should be 2 after second insert", hn.size(), 2);
 		
 		hn.add("ThirdInsert");
 		
-		assertEquals("Size should be 3 after third insert", hn.getHeapSize(), 3);
+		assertEquals("Size should be 3 after third insert", hn.size(), 3);
 		
 		hn.add("FourthInsert");
 
-		assertEquals("Height should be 4 after fourth insert", hn.getHeapSize(), 4);
+		assertEquals("Height should be 4 after fourth insert", hn.size(), 4);
 
-		assertEquals("Height should be 0 for null node", nn.getHeapSize(), 0);
+		assertEquals("Height should be 0 for null node", nn.size(), 0);
 	}
 
 	@Test

@@ -12,6 +12,18 @@ import java.text.Collator;
  */
 public class MinHeapStrategy implements HeapStrategy {
 
+	/**
+	 * Method will analyze the current value of a node as well as the
+	 * proposed value and return true if the proposed value should be
+	 * swapped with the current value.
+	 * 
+	 * Criteria for true: new value comes alphabetically prior to the
+	 * current value.
+	 * 
+	 * @param currentValue
+	 * @param newValue
+	 * @return
+	 */
 	@Override
 	public boolean valueShouldSwap(String currentValue, String newValue) {
 		Collator nodeCollator = Collator.getInstance();

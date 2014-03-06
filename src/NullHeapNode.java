@@ -18,35 +18,58 @@ public class NullHeapNode extends HeapNode {
 		return true;
 	}
 
+	/**
+	 * Null nodes do not have children, so return this null node.
+	 */
 	@Override
-	public HeapNode getLeftChild() {
+	public HeapNode left() {
 		return this;
 	}
 
+	/**
+	 * Null nodes do not have children, so return this null node.
+	 */
 	@Override
-	public HeapNode getRightChild() {
+	public HeapNode right() {
 		return this;
 	}
 
+	/**
+	 * Null nodes do not have value so this returns the empty string.
+	 */
 	@Override
-	public String getNodeValue() {
+	public String getValue() {
 		return "";
 	}
 	
+	/**
+	 * Sets the HeapStrategy for when add is called and a new node
+	 * needs the HeapStrategy of the structure.
+	 */
 	public void setHeapStrategy(HeapStrategy strategy) {
 		heapStrat = strategy;
 	}
 
+	/**
+	 * Height is always zero for null nodes.
+	 */
 	@Override
-	public int getHeapHeight() {
+	public int height() {
 		return 0;
 	}
 
+	/**
+	 * Size is always zero for null nodes.
+	 */
 	@Override
-	public int getHeapSize() {
+	public int size() {
 		return 0;
 	}
 
+	/**
+	 * When add is called, create a new HeapNode with a value and pass
+	 * back for assignment as a child in place of this null node.
+	 */
 	@Override
 	public HeapNode add(String insertValue) {
 		ValuedHeapNode vhn = new ValuedHeapNode(insertValue);
@@ -54,6 +77,9 @@ public class NullHeapNode extends HeapNode {
 		return vhn;
 	}
 
+	/**
+	 * Null nodes have no string value so method returns empty string.
+	 */
 	@Override
 	public String toString() {
 		return "";

@@ -47,7 +47,7 @@ public class ConcreteHeap extends Heap {
 	 */
 	@Override
 	public int size() {
-		return getRootNode().getHeapSize();
+		return getRootNode().size();
 	}
 
 	/**

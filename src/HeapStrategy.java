@@ -8,5 +8,13 @@
  *
  */
 public interface HeapStrategy {
+	/**
+	 * Method will analyze the current value of a node as well as the
+	 * proposed value and return true if the proposed value should be
+	 * swapped with the current value.
+	 * @param currentValue
+	 * @param newValue
+	 * @return
+	 */
 	public boolean valueShouldSwap(String currentValue, String newValue);
 }

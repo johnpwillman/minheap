@@ -17,12 +17,21 @@ public class HeapIterator implements Iterator<String> {
 	HeapNode topNode;
 	Stack<HeapNode> traversalStack = new Stack<HeapNode>();
 	
+	/**
+	 * Uses the root node of a heap to construct an iterator for the
+	 * Collection specification in Java.
+	 * @param rootNode
+	 */
 	public HeapIterator(HeapNode rootNode) {
 		topNode = rootNode;
 		
 		traversalStack.push(topNode);
 	}
-
+	
+	/**
+	 * Returns true as long as there are items left in the Collection
+	 * that have not been iterated over.
+	 */
 	@Override
 	public boolean hasNext() {
 		if (traversalStack.isEmpty()) {
@@ -30,18 +39,23 @@ public class HeapIterator implements Iterator<String> {
 		}
 		return true;
 	}
-
+	
+	/**
+	 * Returns the next unaccessed value in the Collection in
+	 * preorder. Used in combination with hasNext() to loop
+	 * over the entire collection safely.
+	 */
 	@Override
 	public String next() {
 		String returnValue = new String();
 		
 		if (!topNode.isNull()) {
-			returnValue = topNode.getNodeValue();
-			if (!topNode.getRightChild().isNull()) {
-				traversalStack.push(topNode.getRightChild());
+			returnValue = topNode.getValue();
+			if (!topNode.right().isNull()) {
+				traversalStack.push(topNode.right());
 			}
-			if (!topNode.getLeftChild().isNull()) {
-				traversalStack.push(topNode.getLeftChild());
+			if (!topNode.left().isNull()) {
+				traversalStack.push(topNode.left());
 			}
 			topNode = traversalStack.peek();
 			traversalStack.pop();
@@ -49,7 +63,10 @@ public class HeapIterator implements Iterator<String> {
 		
 		return returnValue;
 	}
-
+	
+	/**
+	 * NOT IMPLEMENTED
+	 */
 	@Override
 	public void remove() {
 		//Left Unimplemented
