@@ -116,26 +116,6 @@ public class ValuedHeapNode extends HeapNode {
 		
 		return this;
 	}
-	
-	/**
-	 * Prints out the values of the heap, matching the input REGEX, in preorder.
-	 * 
-	 * @param regexToPrint	REGEX that is used to choose nodes for printing.
-	 * @return				The Preorder list of nodes in this node's heap matching the REGEX
-	 */
-	public String getHeapValuesMatchingRegex(String regexToPrint) {
-		String preorderString = new String("");
-		
-		if (getNodeValue().matches(regexToPrint)) {
-			preorderString += "[" + getNodeValue() + "]";
-		}
-		
-		preorderString += " " + getLeftChild().getHeapValuesMatchingRegex(regexToPrint);
-		
-		preorderString += " " + getRightChild().getHeapValuesMatchingRegex(regexToPrint);
-		
-		return preorderString.trim();
-	}
 
 	@Override
 	public String toString() {
