@@ -12,17 +12,17 @@ public class MinHeapTest {
 
 	@Test
 	public void testMinHeap() {
-		ConcreteHeap mh = new ConcreteHeap();
+		Heap mh = new ConcreteHeap();
 		
 		assertTrue(
-			"Heap should have no nodes and be null",
-			mh.toString().equals("[null]")
+			"Heap should have no nodes and be empty",
+			mh.toString().equals("")
 		);
 	}
 
 	@Test
 	public void testMinHeapString() {
-		ConcreteHeap mh = new ConcreteHeap();
+		Heap mh = new ConcreteHeap();
 		mh.add("test string");
 		
 		assertTrue(
@@ -33,7 +33,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testInsert() {
-		ConcreteHeap mh = new ConcreteHeap();
+		Heap mh = new ConcreteHeap();
 		
 		mh.add("single insert");
 		
@@ -52,7 +52,7 @@ public class MinHeapTest {
 
 	@Test
 	public void testPrintHeapStringsInPreOrder() {
-		ConcreteHeap mh = new ConcreteHeap();
+		Heap mh = new ConcreteHeap();
 		
 		mh.add("run");
 		mh.add("runner");
@@ -67,24 +67,6 @@ public class MinHeapTest {
 			mh.toString().equals(
 				"[run] [runner] [runnings] [swimmer] [running] [swimming]"
 			)
-		);
-	}
-
-	@Test
-	public void testPrintHeapStringsEndingInIngInPreOrder() {
-		ConcreteHeap mh = new ConcreteHeap();
-		
-		mh.add("run");
-		mh.add("runner");
-		mh.add("running");
-		mh.add("runnings");
-		mh.add("swimming");
-		mh.add("swimmer");
-		
-		assertTrue(
-			"Method return should only print heap nodes that end in 'ing':"
-			+ "[running] [swimming]",
-			mh.toString().equals("[running] [swimming]")
 		);
 	}
 

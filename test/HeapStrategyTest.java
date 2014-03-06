@@ -36,8 +36,6 @@ public class HeapStrategyTest {
 		mh.add("swimming");
 		mh.add("swimmer");
 		
-		System.out.println(mh.toString());
-		
 		assertTrue(
 			"Method return should print all heap nodes in preorder: "
 			+ "[swimming] [swimmer] [run] [running] [runnings] [runner]",
