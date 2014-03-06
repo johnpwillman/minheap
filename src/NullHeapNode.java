@@ -55,11 +55,6 @@ public class NullHeapNode extends HeapNode {
 	}
 
 	@Override
-	public String getHeapValuesMatchingRegex(String regexToPrint) {
-		return "";
-	}
-
-	@Override
 	public String toString() {
 		return "";
 	}

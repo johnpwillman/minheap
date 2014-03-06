@@ -28,7 +28,5 @@ public abstract class HeapNode {
 	
 	public abstract HeapNode add(String insertValue);
 	
-	public abstract String getHeapValuesMatchingRegex(String regexToPrint);
-	
 	public abstract String toString();
 }
