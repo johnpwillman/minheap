@@ -1,4 +1,10 @@
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public class NullHeapNode extends HeapNode {
 	
 	private HeapStrategy heapStrat;

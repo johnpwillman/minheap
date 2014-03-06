@@ -1,6 +1,12 @@
 import java.text.Collator;
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public class MinHeapStrategy implements HeapStrategy {
 
 	@Override

@@ -1,10 +1,6 @@
 
-
 /**
- * This class creates nodes amenable to the definition of nodes in a Min-Heap
- * provided by Assignment #1. Each node has up to two child nodes of the same
- * type and all child nodes and their child nodes are of a value greater than
- * their parent.
+ * 
  * 
  * @author John Willman
  * RedID: 809362691

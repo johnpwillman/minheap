@@ -1,19 +1,13 @@
-//import java.util.AbstractCollection;
 import java.util.Iterator;
 
 /**
- * The Heap class implements a Heap data structure of Strings where root has the
- * smallest value in the heap and each node is smaller than all the values in the heaps
- * of its child nodes. Each node has a maximum of two children.
- * This implementation allows adding of nodes to the heap and printing of the heap's
- * nodes in preorder.
- * This implementation does not allow deletion of nodes.
+ * Description
  * 
  * @author John Willman,
  * RedID: 809362691
  *
  */
-public class ConcreteHeap extends Heap /*extends AbstractCollection<String>*/  {
+public class ConcreteHeap extends Heap {
 	
 	private HeapNode rootNode = new NullHeapNode();
 	
@@ -90,7 +84,6 @@ public class ConcreteHeap extends Heap /*extends AbstractCollection<String>*/  {
 	 */
 	@Override
 	public String toString() {
-		//return getRootNode().getHeapValuesMatchingRegex(".*");
 		return getRootNode().toString();
 	}
 	

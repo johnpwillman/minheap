@@ -1,5 +1,11 @@
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public abstract class HeapNode {
 	
 	public HeapNode() {

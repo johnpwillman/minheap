@@ -1,7 +1,13 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public class IngFilter implements Iterator<String> {
 	
 	Iterator<String> ingItr;

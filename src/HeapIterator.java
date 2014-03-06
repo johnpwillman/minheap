@@ -1,7 +1,13 @@
 import java.util.Iterator;
 import java.util.Stack;
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public class HeapIterator implements Iterator<String> {
 	
 	HeapNode topNode;
@@ -15,9 +21,6 @@ public class HeapIterator implements Iterator<String> {
 
 	@Override
 	public boolean hasNext() {
-		//if (numberIterated < size) {
-		//	return true;
-		//}
 		if (traversalStack.isEmpty()) {
 			return false;
 		}

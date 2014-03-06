@@ -1,6 +1,12 @@
 import java.util.Iterator;
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public class IngDecorator extends HeapDecorator {
 	
 	Iterator<String> ingIterator;

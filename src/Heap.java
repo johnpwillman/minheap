@@ -1,7 +1,13 @@
 import java.util.AbstractCollection;
 import java.util.Iterator;
 
-
+/**
+ * Description
+ * 
+ * @author John Willman,
+ * RedID: 809362691
+ *
+ */
 public abstract class Heap extends AbstractCollection<String> {
 	
 	public abstract Iterator<String> iterator();
