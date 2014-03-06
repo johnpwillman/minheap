@@ -16,17 +16,18 @@ public class MinHeapTest {
 		
 		assertTrue(
 			"Heap should have no nodes and be null",
-			mh.printHeapStringsInPreOrder().equals("[null]")
+			mh.toString().equals("[null]")
 		);
 	}
 
 	@Test
 	public void testMinHeapString() {
-		ConcreteHeap mh = new ConcreteHeap("test string");
+		ConcreteHeap mh = new ConcreteHeap();
+		mh.add("test string");
 		
 		assertTrue(
 			"Heap should have one node: [test string]",
-			mh.printHeapStringsInPreOrder().equals("[test string]")
+			mh.toString().equals("[test string]")
 		);
 	}
 
@@ -34,18 +35,18 @@ public class MinHeapTest {
 	public void testInsert() {
 		ConcreteHeap mh = new ConcreteHeap();
 		
-		mh.insert("single insert");
+		mh.add("single insert");
 		
 		assertTrue(
 			"Heap should have one node: [single insert]",
-			mh.printHeapStringsInPreOrder().equals("[single insert]")
+			mh.toString().equals("[single insert]")
 		);
 		
-		mh.insert("random insert");
+		mh.add("random insert");
 		
 		assertTrue(
 			"Heap should have two nodes: [random insert] [single insert]",
-			mh.printHeapStringsInPreOrder().equals("[random insert] [single insert]")
+			mh.toString().equals("[random insert] [single insert]")
 		);
 	}
 
@@ -53,17 +54,17 @@ public class MinHeapTest {
 	public void testPrintHeapStringsInPreOrder() {
 		ConcreteHeap mh = new ConcreteHeap();
 		
-		mh.insert("run");
-		mh.insert("runner");
-		mh.insert("running");
-		mh.insert("runnings");
-		mh.insert("swimming");
-		mh.insert("swimmer");
+		mh.add("run");
+		mh.add("runner");
+		mh.add("running");
+		mh.add("runnings");
+		mh.add("swimming");
+		mh.add("swimmer");
 		
 		assertTrue(
 			"Method return should print all heap nodes in preorder: "
 			+ "[run] [runner] [runnings] [swimmer] [running] [swimming]",
-			mh.printHeapStringsInPreOrder().equals(
+			mh.toString().equals(
 				"[run] [runner] [runnings] [swimmer] [running] [swimming]"
 			)
 		);
@@ -73,17 +74,17 @@ public class MinHeapTest {
 	public void testPrintHeapStringsEndingInIngInPreOrder() {
 		ConcreteHeap mh = new ConcreteHeap();
 		
-		mh.insert("run");
-		mh.insert("runner");
-		mh.insert("running");
-		mh.insert("runnings");
-		mh.insert("swimming");
-		mh.insert("swimmer");
+		mh.add("run");
+		mh.add("runner");
+		mh.add("running");
+		mh.add("runnings");
+		mh.add("swimming");
+		mh.add("swimmer");
 		
 		assertTrue(
 			"Method return should only print heap nodes that end in 'ing':"
 			+ "[running] [swimming]",
-			mh.printHeapStringsEndingInIngInPreOrder().equals("[running] [swimming]")
+			mh.toString().equals("[running] [swimming]")
 		);
 	}
 
