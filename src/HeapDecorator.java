@@ -1,7 +1,12 @@
 import java.util.Iterator;
 
 /**
- * Description
+ * HeapDecorator is an implementation of the abstract Heap collection
+ * definition but which operates on the Decorator Design Pattern. It
+ * is instantiated by creating an instance of ConcreteHeap and using
+ * that to implement its methods. It's main purpose is to serve as a
+ * parent class for other decorators that tweak the implementation of
+ * ConcreteHeap in some way.
  * 
  * @author John Willman,
  * RedID: 809362691

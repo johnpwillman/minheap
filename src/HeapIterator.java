@@ -2,7 +2,11 @@ import java.util.Iterator;
 import java.util.Stack;
 
 /**
- * Description
+ * HeapIterator is the specific implementation of the Iterator pattern
+ * used in these Heap Classes and sub-classes. It utilizes the 
+ * underlying implementation of the Heap to create an iterator for the
+ * Heap subclasses to return in accordance with the definition of a
+ * collection.
  * 
  * @author John Willman,
  * RedID: 809362691

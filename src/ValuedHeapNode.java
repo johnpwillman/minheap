@@ -1,6 +1,10 @@
 
 /**
- * 
+ * ValuedHeapNode is the main object that makes up the tree in
+ * our implementation of a Heap. Each node is only aware of its
+ * own value and the references to its children. Most of its
+ * methods will recursively work their way through its children
+ * and thus each node operates as its own sub-tree.
  * 
  * @author John Willman
  * RedID: 809362691

@@ -1,7 +1,11 @@
 import java.util.Iterator;
 
 /**
- * Description
+ * IngDecorator is a decorator extending the HeapDecorator class
+ * which modifies the functionality of a ConcreteHeap to deal only
+ * with words ending in "ing". It does this by replacing the 
+ * standard iterator implementation in ConcreteHeap with an
+ * IngFilter iterator.
  * 
  * @author John Willman,
  * RedID: 809362691

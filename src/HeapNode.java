@@ -1,6 +1,7 @@
 
 /**
- * Description
+ * HeapNode is the abstract definition of Node objects used to
+ * implement the Heap objects for Assignment 2. 
  * 
  * @author John Willman,
  * RedID: 809362691

@@ -2,7 +2,9 @@ import java.util.AbstractCollection;
 import java.util.Iterator;
 
 /**
- * Description
+ * Heap is an abstract object definition for a Collection.
+ * The specification of how it is implemented is provided by
+ * CS635 Assignment 2
  * 
  * @author John Willman,
  * RedID: 809362691

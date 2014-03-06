@@ -1,7 +1,10 @@
 import java.util.Iterator;
 
 /**
- * Description
+ * ConcreteHeap is an implementation of the abstract Heap definition that,
+ * by default, will order its items according to the MinHeap Strategy
+ * defined in Assignment 1. It can also be instantiated using a MaxHeap
+ * Strategy which is the opposite ordering of MinHeap.
  * 
  * @author John Willman,
  * RedID: 809362691

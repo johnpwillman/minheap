@@ -2,7 +2,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Description
+ * IngFilter is a filter over a normal String Iterator which operates
+ * as though the normal iterator only contained its words ending in 
+ * "ing". All other functionality is the same.
  * 
  * @author John Willman,
  * RedID: 809362691

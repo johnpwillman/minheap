@@ -1,5 +1,9 @@
 /**
- * Description
+ * NullHeapNode extends the functions defined in HeapNode in 
+ * a such a way as to implement the Null Object Pattern. The
+ * methods anticipate the context in which a ValuedHeapNode
+ * would call them and returns values which prevent the need
+ * for null-checks in the calling object.
  * 
  * @author John Willman,
  * RedID: 809362691
