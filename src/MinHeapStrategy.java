@@ -1,7 +1,10 @@
 import java.text.Collator;
 
 /**
- * Description
+ * MinHeapStrategy is an implementation of HeapStrategy that causes a Heap
+ * object to insert values from top to bottom and only swapping values when
+ * the new value is lower than or equal to the current value of the
+ * position in context.
  * 
  * @author John Willman,
  * RedID: 809362691
