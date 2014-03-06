@@ -24,6 +24,8 @@ public class HeapNodeTest {
 	public void testGetHeapHeight() {
 		HeapNode hn = new ValuedHeapNode("testGetHeapHeight");
 		hn.setHeapStrategy(new MinHeapStrategy());
+		HeapNode nn = new NullHeapNode();
+		//nn.setHeapStrategy(new MinHeapStrategy());
 		
 		assertEquals("Height should be 1 on node creation", hn.getHeapHeight(), 1);
 		
@@ -38,14 +40,16 @@ public class HeapNodeTest {
 		hn.add("FourthInsert");
 		
 		assertEquals("Height should be 3 after fourth insert", hn.getHeapHeight(), 3);
+		
+		
+		assertEquals("Height should be 0 for null node", nn.getHeapHeight(), 0);
 	}
 	
 	@Test
 	public void testGetHeapSize() {
 		HeapNode hn = new ValuedHeapNode("testGetHeapHeight");
 		hn.setHeapStrategy(new MinHeapStrategy());
-		
-		System.out.println(hn.getHeapSize());
+		HeapNode nn = new NullHeapNode();
 		
 		assertEquals("Size should be 1 on node creation", hn.getHeapSize(), 1);
 		
@@ -58,14 +62,18 @@ public class HeapNodeTest {
 		assertEquals("Size should be 3 after third insert", hn.getHeapSize(), 3);
 		
 		hn.add("FourthInsert");
-		
+
 		assertEquals("Height should be 4 after fourth insert", hn.getHeapSize(), 4);
+
+		assertEquals("Height should be 0 for null node", nn.getHeapSize(), 0);
 	}
 
 	@Test
 	public void testAddNode() {
-		ValuedHeapNode hn = new ValuedHeapNode("testInsertNode");
+		HeapNode hn = new ValuedHeapNode("testInsertNode");
 		hn.setHeapStrategy(new MinHeapStrategy());
+		HeapNode nn = new NullHeapNode();
+		nn.setHeapStrategy(new MinHeapStrategy());
 		
 		assertTrue(
 			"Heap should be equal to [testInsertNode]",
@@ -98,6 +106,18 @@ public class HeapNodeTest {
 		assertTrue(
 			"Heap should be equal to [a] [testInsertNode] [z] [b] [c]",
 			hn.toString().equals("[a] [testInsertNode] [z] [b] [c]")
+		);
+		
+		hn = nn.add("a");
+		
+		assertTrue(
+			"Null node should have changed HeapNode hn to be equal to [a]",
+			hn.toString().equals("[a]")
+		);
+		
+		assertTrue(
+			"Null node should still have no value",
+			nn.toString().equals("")
 		);
 	}
 

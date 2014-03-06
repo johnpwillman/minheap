@@ -46,6 +46,7 @@ public class IngDecorator extends HeapDecorator {
 		
 		while (ingIterator.hasNext()) {
 			sArray[index] = ingIterator.next();
+			index++;
 		}
 		
 		return sArray;
